@@ -13,13 +13,9 @@ export interface IApiModelPropertyArgs {
 export function ApiModelProperty(
   args?: IApiModelPropertyArgs
 ): PropertyDecorator {
-  return function (target: any, propertyKey: string | symbol) {
+  return function(target: any, propertyKey: string | symbol) {
     let propertyType: any;
-    if (Reflect.getMetadata(
-      "design:type",
-      target,
-      propertyKey
-    ) !== undefined) {
+    if (Reflect.getMetadata("design:type", target, propertyKey) !== undefined) {
       propertyType = Reflect.getMetadata(
         "design:type",
         target,
